@@ -1,0 +1,1 @@
+cd ./src && zip -r ../aws-tab-title-extension.zip .

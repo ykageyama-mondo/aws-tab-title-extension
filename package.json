@@ -1,0 +1,19 @@
+{
+  "name": "aws-tab-title-extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pack": "./scripts/zip.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ykageyama-mondo/aws-tab-title-extension.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ykageyama-mondo/aws-tab-title-extension/issues"
+  },
+  "homepage": "https://github.com/ykageyama-mondo/aws-tab-title-extension#readme"
+}
