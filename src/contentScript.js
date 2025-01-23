@@ -2,7 +2,7 @@ window.addEventListener('load', mount, {
   once: true,
 })
 
-const accountRegex = /(.*) \(.*\)|Account ID: (.*)/
+const accountRegex = /(?<accountName>.*) \(.*\)|Account ID: (?<accountId>.*)/
 
 async function mount() {
   let account = getAccount()
@@ -37,6 +37,10 @@ function getAccount() {
 
   const text = ele.innerText
 
-  return accountRegex.exec(text)?.[1] || accountRegex.exec(text)?.[2]
+  const regexResult = accountRegex.exec(text)
 
+  if (!regexResult)
+    return undefined
+
+  return regexResult.groups.accountName ?? regexResult.groups.accountId
 }
