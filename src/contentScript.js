@@ -37,6 +37,6 @@ function getAccount() {
 
   const text = ele.innerText
 
-  return accountRegex.exec(text)?.[1]
+  return accountRegex.exec(text)?.[1] || accountRegex.exec(text)?.[2]
 
 }
