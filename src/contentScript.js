@@ -24,8 +24,16 @@ async function mount() {
     console.error('Title element not found')
     return
   }
+  titleElement.innerText = `${account}: ${titleElement.innerText}`
 
-  titleElement.innerText = `${account} - ${titleElement.innerText}`
+  const observer = new MutationObserver(() => {
+    if (!titleElement.innerText.includes(account))
+      titleElement.innerText = `${account}: ${titleElement.innerText}`
+  })
+
+  observer.observe(titleElement, {
+    childList: true,
+  })
 
 }
 
